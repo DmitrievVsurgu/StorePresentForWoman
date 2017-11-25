@@ -10,6 +10,7 @@ namespace StorePresentForWoman
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
