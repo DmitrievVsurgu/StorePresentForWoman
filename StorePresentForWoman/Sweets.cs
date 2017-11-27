@@ -18,5 +18,27 @@ namespace StorePresentForWoman
             Filler = filler;
             Price = price;
         }
+        public override double GetDiscountPrice(User user)
+        {
+            TypeSweets = TypeSweets.ToLower();
+            if (user.DayOfTheWeek == "Friday" && TypeSweets == "chocolate")
+            {
+                return Price * 0.5;
+            }
+            if (user.DateDay == 8 && TypeSweets == "candy")
+            {
+                return Price * 0.7;
+            }
+            return Price;
+        }
+        public override void GetWrite()
+        {
+            Console.WriteLine("Sweets:");
+            Console.WriteLine("Name: " + Name);
+            Console.WriteLine("TypeSweets: " + TypeSweets);
+            Console.WriteLine("Filler: " + Filler);
+            Console.WriteLine("Price: " + Price);
+            Console.WriteLine();
+        }
     }
 }

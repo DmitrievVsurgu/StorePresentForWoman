@@ -1,28 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StorePresentForWoman
 {
-    class Present
+    public class Present
     {
         public double Price { get; set; }
         public string Name { get; set; }
         public string Manufacture { get; set; }
 
-        public virtual double GetDiscountPrice(User user, Present product)
+        public virtual double GetDiscountPrice(User user)
         {
-            if(user.DateDay == 8 && product.Name[0] == 'f' )
-            {
-                return Price * 0.85
-            }
-            if ()
-            {
-
-            }
             return Price ;
+        }
+        public virtual void GetWrite()
+        {
+            Console.WriteLine("Product");
+            Console.WriteLine("Name: " + Name);
+            Console.WriteLine("Price: " + Price);
+            Console.WriteLine("Manufacture: " + Manufacture);
         }
     }
 }

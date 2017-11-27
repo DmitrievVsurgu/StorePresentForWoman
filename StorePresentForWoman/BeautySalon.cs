@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StorePresentForWoman
 {
@@ -15,7 +11,27 @@ namespace StorePresentForWoman
             Name = name;
             Price = price;
             Service = service;
-
+        }
+        public override double GetDiscountPrice(User user)
+        {
+            Service = Service.ToLower();
+            if (user.DayOfTheWeek == "WEDNESDAY" && Service[0] == 'm')
+            {
+                return Price * 0.85;
+            }
+            if(Service[0] == 'r')
+            {
+                return Price * 0.9;
+            }
+            return Price;
+        }
+        public override void GetWrite()
+        {
+            Console.WriteLine("BeautySalon:");
+            Console.WriteLine("Name: " + Name);
+            Console.WriteLine("Service: " + Service);
+            Console.WriteLine("Price: " + Price);
+            Console.WriteLine();
         }
     }
 }
