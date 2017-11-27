@@ -6,17 +6,18 @@ using System.Threading.Tasks;
 
 namespace StorePresentForWoman
 {
-    class Flowers : Present
+    class Cosmetic : Present
     {
         public string Color { get; private set; }
-        public int Count { get; private set; }
+        public string Firma { get; private set; }
 
-        public Flowers(string name, int price, string color, int count)
+        public Cosmetic(string name, int price, string color, string firma, string manufacture)
         {
             Name = name;
             Price = price;
             Color = color;
-            Count = count;
+            Firma = firma;
+            Manufacture = manufacture;
         }
 
         public override double GetDiscountPrice(User user)

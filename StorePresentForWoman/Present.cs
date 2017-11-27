@@ -12,11 +12,11 @@ namespace StorePresentForWoman
         public string Name { get; set; }
         public string Manufacture { get; set; }
 
-        public virtual double GetDiscountPrice(User user)
+        public virtual double GetDiscountPrice(User user, Present product)
         {
-            if(user.DateDay == )
+            if(user.DateDay == 8 && product.Name[0] == 'f' )
             {
-
+                return Price * 0.85
             }
             if ()
             {
